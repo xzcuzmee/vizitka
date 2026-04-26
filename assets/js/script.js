@@ -1,11 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. ПЕЧАТАЮЩИЙСЯ ТЕКСТ ---
     const typingSpan = document.querySelector('.typing');
     if (typingSpan) {
         const text = "интерфейсы будущего";
         let index = 0;
-        typingSpan.textContent = ""; // Очищаем перед стартом
+        typingSpan.textContent = ""; 
 
         function typeEffect() {
             if (index < text.length) {
@@ -14,10 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(typeEffect, 100);
             }
         }
-        setTimeout(typeEffect, 1000); // Задержка в 1 сек перед началом
+        setTimeout(typeEffect, 1000); 
     }
 
-    // --- 2. КАСТОМНЫЙ КУРСОР ---
 const cursor = document.querySelector('.cursor');
 const follower = document.querySelector('.cursor-follower');
 
@@ -40,9 +38,6 @@ activeElements.forEach(el => {
     el.addEventListener('mouseleave', () => follower.classList.remove('cursor-active'));
 });
 
-
-
-    // --- 3. ИНДИКАТОР СКРОЛЛА ---
     const progressBar = document.querySelector('.scroll-progress');
     if (progressBar) {
         window.addEventListener('scroll', () => {
@@ -53,7 +48,6 @@ activeElements.forEach(el => {
         });
     }
 
-    // --- 4. ПУЛЬСАЦИЯ ИКОНОК ---
     const contactCards = document.querySelectorAll('.contact-card-link');
     contactCards.forEach(card => {
         const icon = card.querySelector('i');
